@@ -114,7 +114,7 @@ angular.module('ionicApp', ['ionic'])
   $scope.submitForm = function() {
      console.log("Going to Give");
    $state.go('menu.tabs.give'); 
- };})
+ };});
 
 
 
