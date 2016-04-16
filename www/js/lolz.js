@@ -94,7 +94,7 @@ angular.module('ionicApp', ['ionic'])
     { name: "Damn I need laundry" },
     { name: "Special Missions" },
     ];
-});
+})
 
 
 .controller('goToGet', function($scope, $state) {
@@ -103,12 +103,12 @@ angular.module('ionicApp', ['ionic'])
    $state.go('menu.tabs.get'); 
  };
 
-});
+})
 .controller('goToGive', function($scope, $state) {
   $scope.submitForm = function() {
      console.log("Going to Give");
    $state.go('menu.tabs.give'); 
- };});
+ };})
 
 
 
