@@ -1,12 +1,21 @@
 <ion-view title="Give" >
             <ion-content  ng-controller="itemCtrl">
               <ion-list>
-                  <ion-item>
-                      <ion-item ng-repeat="item in items">
-                          <div style="text-align: center;">
-                             <a href="#give/{{ item.id }}" style="text-decoration:none"><b> <span align="center" style="font-size:large;">{{item.name}}</span></b></a>
-                          </div>
-                      </ion-item>
+                  <ion-item ng-click="func('food')"> 
+                      <p style="text-align:center;">Get some food</p>
+                  </ion-item>
+                  <ion-item ng-click="func('laundry')">
+                      <p style="text-align:center;"> Help me out with some laundry</p>
+                  </ion-item>
+                  <ion-item ng-click="func('tutor')">
+                      <p style="text-align:center;"> Tutor someone</p>
+                  </ion-item>
+                  <ion-item ng-click="func('buy')">
+                      <p style="text-align:center;">Buy some stuff</p>
+                  </ion-item>
+                 <ion-item ng-click="func('others')">
+                     <p style="text-align:center;">Special missions</p>
+                  </ion-item>
               </ion-list>        
             </ion-content>
           </ion-view>
