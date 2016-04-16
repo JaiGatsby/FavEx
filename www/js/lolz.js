@@ -70,9 +70,12 @@ angular.module('ionicApp', ['ionic'])
 .state('menu.tabs.get', {
     url: "/get",
     views: {
+      'get-tab': {
         templateUrl: "templates/get.html"
       }
+    }
   })
+
   .state('menu.tabs.about.third', {
     url: "/third",
     views: {
@@ -87,7 +90,7 @@ angular.module('ionicApp', ['ionic'])
 
 .controller('goToGet', function($scope, $state) {
   $scope.submitForm = function() {
-     console.log("Submitting Form", user);
+     console.log("Submitting Form");
    $state.go('menu.tabs.get'); 
  };
 
