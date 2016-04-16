@@ -84,7 +84,8 @@ angular.module('ionicApp', ['ionic'])
            'food-tab': {
                templateUrl: "templates/food.html"
            }
-       }
+       },
+      controller: 'foodctrl'
    })
          .state('favdetails', {
              url: "/favdetails",
@@ -207,7 +208,7 @@ angular.module('ionicApp', ['ionic'])
     $scope.submitForm = function() {
         console.log("Going to Give");
         $state.go('menu.tabs.give'); 
-
+        
     };
 })
 
@@ -218,15 +219,19 @@ angular.module('ionicApp', ['ionic'])
 	 
 	 
  })
- // whoevers reading this shit, you are 
-.service('getshit', function(dbman){
-            this.retrieve_jobs = function(t) {
-				
-               return dbman.query('f', {type: t}, 'time');
-			   
-            }
-         })
+     .controller('foodctrl', function ($scope, $stateParams, dbman) {
 
+      
+         $scope.data = function () { alert(JSON.stringify(dbman.query('f', { type: 'f' }, '', 100000, 0))); };
+         
+         $scope.doRefresh = function () {
+             alert("Refreshing");
+             $scope.$broadcast('scroll.refreshComplete');
+         };
+        
+
+
+     })
 
 .controller('CalcCtrl', function ($scope, $state) {
     $scope.data = {};
