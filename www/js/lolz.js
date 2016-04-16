@@ -170,12 +170,7 @@ angular.module('ionicApp', ['ionic'])
 
 
 .controller('goToGive', function($scope, $state) {
-<<<<<<< HEAD
-  $scope.submitForm = function() {
-     console.log("Going to Give");
-   $state.go('menu.tabs.give'); 
- };});
-=======
+
     $scope.submitForm = function() {
         console.log("Going to Give");
         $state.go('menu.tabs.give'); 
@@ -183,11 +178,21 @@ angular.module('ionicApp', ['ionic'])
     };
 })
 
- .controller('favdetailsctrl', function ($scope, $stateParams) {
-   
-     $scope.id = $stateParams.favid;
- })
->>>>>>> d721854fa05cc68237d2e099146f5af69f915a71
+ .controller('favdetailsctrl', function ($scope, $stateParams, getshit) {
+	 
+     $scope.id = $stateParams.favid
+	 
+	 
+	 
+ }).
+ // whoevers reading this shit, you are 
+service('getshit', function(dbman){
+            this.retrieve_jobs = function(t) {
+				
+               return dbman.query('f', {type: t}, 'time');
+			   
+            }
+         });
 
 
 
