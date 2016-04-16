@@ -67,6 +67,15 @@ angular.module('ionicApp', ['ionic'])
       }
     }
   })
+.state('menu.tabs.get', {
+    url: "/get",
+    views: {
+      'get-tab': {
+        templateUrl: "templates/get.html"
+      }
+    }
+  })
+
   .state('menu.tabs.about.third', {
     url: "/third",
     views: {
@@ -78,3 +87,28 @@ angular.module('ionicApp', ['ionic'])
 
   $urlRouterProvider.otherwise("/menu/tabs/about");
 })
+
+.controller('itemCtrl', function ($scope) {
+    $scope.items = [
+    { name: "I am Hungry" },
+    { name: "Damn I need laundry" },
+    { name: "Special Missions" },
+    ];
+})
+
+
+.controller('goToGet', function($scope, $state) {
+  $scope.submitForm = function() {
+     console.log("Going to Get");
+   $state.go('menu.tabs.get'); 
+ };
+
+})
+.controller('goToGive', function($scope, $state) {
+  $scope.submitForm = function() {
+     console.log("Going to Give");
+   $state.go('menu.tabs.give'); 
+ };})
+
+
+

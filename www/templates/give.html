@@ -1,5 +1,14 @@
 <ion-view title="Give" >
-            <ion-content class="padding has-tabs-top">
-              <p>lolz</p>
+            <ion-content  ng-controller="itemCtrl">
+              <ion-list>
+                  <ion-item>
+                      <ion-item ng-repeat="item in items" ng-click="func()">
+                          <div style="text-align: center;">
+                              <b> <span align="center" style="font-size:large;">{{item.name}}</span></b>
+                          </div>
+                      </ion-item>
+              </ion-list>        
             </ion-content>
           </ion-view>
+
+<!-- Use ng-repeat, link a controller to each page. Each controllor is linked to the scope. Create a $scope.items[]. Then use ng repeat item in list and just generate the list values-->
