@@ -74,43 +74,9 @@ angular.module('ionicApp', ['ionic'])
     views: {
       'get-tab': {
         templateUrl: "templates/get.html"
-      },
-	controller: 'getCon'
-    }
-
-    .state('menu.tabs.about.first', {
-        url: "/first",
-        views: {
-            'about-sub': {
-                templateUrl: "templates/first.html"
-            }
-        }
-    })
-    .state('menu.tabs.about.second', {
-        url: "/second",
-        views: {
-            'about-sub': {
-                templateUrl: "templates/second.html"
-            }
-        }
-    })
-    .state('menu.tabs.give', {
-        url: "/give",
-        views: {
-            'give-tab': {
-                templateUrl: "templates/give.html"
-            }
-        }
-    })
-  .state('menu.tabs.get', {
-      url: "/get",
-      views: {
-          'get-tab': {
-              templateUrl: "templates/get.html"
-          }
       }
-
-  })
+    }
+})
    .state('menu.tabs.food', {
        url: "/food",
        views: {
@@ -120,7 +86,7 @@ angular.module('ionicApp', ['ionic'])
        }
    })
          .state('favdetails', {
-             url: "/give/:favid",
+             url: "/favdetails",
              views: {
                  'food-tab': {
                      templateUrl: "templates/favdetails.html"
@@ -210,6 +176,7 @@ angular.module('ionicApp', ['ionic'])
     $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value") + ",000");
   };
 })*/
+
 .controller('goToGet', function($scope, $state) {
     $scope.submitForm = function() {
         console.log("Going to Get");
@@ -235,15 +202,15 @@ angular.module('ionicApp', ['ionic'])
 	 
 	 
 	 
- }).
+ })
  // whoevers reading this shit, you are 
-service('getshit', function(dbman){
+.service('getshit', function(dbman){
             this.retrieve_jobs = function(t) {
 				
                return dbman.query('f', {type: t}, 'time');
 			   
             }
-         });
+         })
 
 
 .controller('CalcCtrl', function ($scope, $state) {
