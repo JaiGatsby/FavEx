@@ -61,6 +61,7 @@ angular.module('ionicApp', ['ionic'])
       }
     }
   })
+
   .state('menu.tabs.give', {
     url: "/give",
     views: {
@@ -83,7 +84,8 @@ angular.module('ionicApp', ['ionic'])
            'food-tab': {
                templateUrl: "templates/food.html"
            }
-       }
+       },
+      controller: 'foodctrl'
    })
          .state('favdetails', {
              url: "/favdetails",
@@ -94,6 +96,7 @@ angular.module('ionicApp', ['ionic'])
              },
              controller: "favdetailsctrl"
          })
+
 
     .state('menu.tabs.laundry', {
         url: "/laundry",
@@ -122,14 +125,15 @@ angular.module('ionicApp', ['ionic'])
         }
     })
 
-    .state('menu.tabs.sm', {
-        url: "/sm",
+    .state('menu.tabs.others', {
+        url: "/others",
         views: {
-            'sm-tab': {
-                templateUrl: "templates/sm.html"
+            'others-tab': {
+                templateUrl: "templates/others.html"
             }
         }
     })
+         
 
     .state('signin', {
         url: "/signin",
@@ -151,13 +155,25 @@ angular.module('ionicApp', ['ionic'])
 })
 
 .controller('itemCtrl', function ($scope, $state, $location) {
-    $scope.items = [
-    { name: "Get some food", id:"food"},
-    { name: "Help out with some laundry", id: "laundry" },
-    { name: "Tutor someone", id: "tutor" },
-    { name: "Help buy some stuff",id:"buy" },
-    { name: "Special missions",id:"sm"}
-    ];
+    $scope.func = function (s) {
+        switch (s) {
+            case "food":
+                $state.go('menu.tabs.food');
+                break;
+            case "laundry":
+                $state.go('menu.tabs.laundry');
+                break;
+            case "tutor":
+                $state.go('menu.tabs.tutor');
+                break;
+            case "buy":
+                $state.go('menu.tabs.buy');
+                break;
+            case "others":
+                $state.go('menu.tabs.others');
+                break;
+        }
+    };
 })
 
 /*.controller('getCon', function($scope){
@@ -192,26 +208,31 @@ angular.module('ionicApp', ['ionic'])
     $scope.submitForm = function() {
         console.log("Going to Give");
         $state.go('menu.tabs.give'); 
-
+        
     };
 })
 
  .controller('favdetailsctrl', function ($scope, $stateParams, getshit) {
 	 
-     $scope.id = $stateParams.favid
+     $scope.id = $stateParams.favid;
 	 
 	 
 	 
  })
- // whoevers reading this shit, you are 
-.service('getshit', function(dbman){
-            this.retrieve_jobs = function(t) {
-				
-               return dbman.query('f', {type: t}, 'time');
-			   
-            }
-         })
 
+     .controller('foodctrl', function ($scope, $stateParams, dbman) {
+
+      
+         $scope.data = function () { alert(JSON.stringify(dbman.query('f', { type: 'f' }, '', 100000, 0))); };
+         
+         $scope.doRefresh = function () {
+             alert("Refreshing");
+             $scope.$broadcast('scroll.refreshComplete');
+         };
+        
+
+
+     })
 
 .controller('CalcCtrl', function ($scope, $state) {
     $scope.data = {};
