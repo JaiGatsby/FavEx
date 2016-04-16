@@ -1,3 +1,41 @@
 #sign-in{
     background: url('../img/BackgroundLarger.png');
 }
+
+#homey{
+    padding-top: 100px;
+    color:white;
+    
+}
+.titles{
+    font-family: 'Lobster';
+}
+.red{
+    color:brown;
+}
+.whut{
+    background: url(../img/BackgroundLarger.PNG)
+}
+#statuscard1{
+    margin-bottom: 60px;
+}
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.btn{
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding:5px 15px;
+}
+p{
+    font-family: 'Cabin';
+}

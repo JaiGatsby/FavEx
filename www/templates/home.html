@@ -1,11 +1,9 @@
-<ion-view view-title="Home">
+<ion-view view-title="Home" class="whut">
         <ion-content>
-            <h1 align="center"> Welcome to FavEx</h1>
+            <div>
+            <h1 id="homey" class="titles" align="center"> Welcome to FavEx</h1>
 
-          <!--div class = "card">
-                  <h3 class="padding">Updates</h3>
-              <p class="padding"> We have finally figured out how to get some shit done</p>
-          </div-->
+          
             <div class="card padding" ng-controller="goToGive">
                 <form ng-submit="submitForm()">
              <ion-item>
@@ -17,9 +15,10 @@
                 <div class="card padding" ng-controller='goToGet'>
                     <form ng-submit="submitForm()">
                 <ion-item>
-                <button class="button button-block button-positive" value="submit" type="submit">Get a favour</button>
+                <button class="button button-block button-royal" value="submit" type="submit">Get a favour</button>
                 </ion-item> 
                     </form>
+            </div>
             </div>
         </ion-content>
       </ion-view>
