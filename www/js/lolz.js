@@ -75,23 +75,15 @@ angular.module('ionicApp', ['ionic'])
           }
       }
   })
-   .state('menu.tabs.food', {
-       url: "/food",
-       views: {
-           'food-tab': {
-               templateUrl: "templates/food.html"
-           }
-       }
-   })
-         .state('favdetails', {
-             url: "/give/:favid",
-             views: {
-                 'food-tab': {
-                     templateUrl: "templates/favdetails.html"
-                 }
-             },
-             controller: "favdetailsctrl"
-         })
+
+    .state('menu.tabs.food', {
+        url: "/food",
+        views: {
+            'food-tab': {
+                templateUrl: "templates/food.html"
+            }
+        }
+    })
 
     .state('menu.tabs.laundry', {
         url: "/laundry",
@@ -120,14 +112,15 @@ angular.module('ionicApp', ['ionic'])
         }
     })
 
-    .state('menu.tabs.sm', {
-        url: "/sm",
+    .state('menu.tabs.others', {
+        url: "/others",
         views: {
-            'sm-tab': {
-                templateUrl: "templates/sm.html"
+            'others-tab': {
+                templateUrl: "templates/others.html"
             }
         }
     })
+         
 
     .state('signin', {
         url: "/signin",
@@ -149,13 +142,25 @@ angular.module('ionicApp', ['ionic'])
 })
 
 .controller('itemCtrl', function ($scope, $state, $location) {
-    $scope.items = [
-    { name: "Get some food", id:"food"},
-    { name: "Help out with some laundry", id: "laundry" },
-    { name: "Tutor someone", id: "tutor" },
-    { name: "Help buy some stuff",id:"buy" },
-    { name: "Special missions",id:"sm"}
-    ];
+    $scope.func = function (s) {
+        switch (s) {
+            case "food":
+                $state.go('menu.tabs.food');
+                break;
+            case "laundry":
+                $state.go('menu.tabs.laundry');
+                break;
+            case "tutor":
+                $state.go('menu.tabs.tutor');
+                break;
+            case "buy":
+                $state.go('menu.tabs.buy');
+                break;
+            case "others":
+                $state.go('menu.tabs.others');
+                break;
+        }
+    };
 })
 
 
@@ -177,10 +182,9 @@ angular.module('ionicApp', ['ionic'])
     };
 })
 
- .controller('favdetailsctrl', function ($scope, $stateParams) {
-   
-     $scope.id = $stateParams.favid;
- })
+
+
+
 
 
 
