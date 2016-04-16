@@ -1,5 +1,11 @@
-﻿<ion-view title="Get some food">
-    <ion-content>
-        <p>HELLO!</p>
+﻿<ion-view title="Get some food" >
+    <ion-content >
+        <ion-refresher pulling-text="Pull to refresh..."
+                       on-refresh="doRefresh()">
+        </ion-refresher>
+         <ion-list>
+             Lols
+            {{data()}}
+        </ion-list>
     </ion-content>
 </ion-view>
