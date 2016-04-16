@@ -1,5 +1,21 @@
-<ion-view title="First" >
-            <ion-content class="padding has-tabs-top">
-              First content
-            </ion-content>
-          </ion-view>
+<ion-view title="First" ng-app="ionicApp" ng-controller="AppCtrl">
+	<ion-content class="padding has-tabs-top">
+    <h3>
+	Welcome
+    </h3>
+	
+	<label class="item item-input">
+      <input ng-model="data.itsc" type="text" placeholder="ITSC ID" onchange="hello()">
+    </label>
+    
+	<label class="item item-input">
+      <input ng-model="data.pword" type="password" placeholder="Password">
+	  <span id="hid_disable" style="height:0px;width=0px;">
+	  
+		</span>
+    </label>
+    
+	<button type="button" id="b" ng-click="check()" class="button button-block button-positive">{{((data.itsc == "")||(data.pword == "")) ? "Enter ITSC ID and Password" : "Go!"}} {{((data.itsc == "")||(data.pword == "")) | yesNo}}</input>
+	
+	</ion-content>
+</ion-view>
