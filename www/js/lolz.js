@@ -75,14 +75,59 @@ angular.module('ionicApp', ['ionic'])
           }
       }
   })
-   .state('menu.tabs.category', {
-       url: "/category",
+   .state('menu.tabs.food', {
+       url: "/food",
        views: {
-           'category-tab': {
-               templateUrl: "templates/category.html"
+           'food-tab': {
+               templateUrl: "templates/food.html"
            }
        }
    })
+         .state('favdetails', {
+             url: "/give/:favid",
+             views: {
+                 'food-tab': {
+                     templateUrl: "templates/favdetails.html"
+                 }
+             },
+             controller: "favdetailsctrl"
+         })
+
+    .state('menu.tabs.laundry', {
+        url: "/laundry",
+        views: {
+            'laundry-tab': {
+                templateUrl: "templates/laundry.html"
+            }
+        }
+    })
+
+    .state('menu.tabs.tutor', {
+        url: "/tutor",
+        views: {
+            'tutor-tab': {
+                templateUrl: "templates/tutor.html"
+            }
+        }
+    })
+
+    .state('menu.tabs.buy', {
+        url: "/buy",
+        views: {
+            'buy-tab': {
+                templateUrl: "templates/buy.html"
+            }
+        }
+    })
+
+    .state('menu.tabs.sm', {
+        url: "/sm",
+        views: {
+            'sm-tab': {
+                templateUrl: "templates/sm.html"
+            }
+        }
+    })
 
     .state('menu.tabs.about.third', {
         url: "/third",
@@ -96,16 +141,14 @@ angular.module('ionicApp', ['ionic'])
     $urlRouterProvider.otherwise("/menu/tabs/about");
 })
 
-.controller('itemCtrl', function ($scope, $state) {
+.controller('itemCtrl', function ($scope, $state, $location) {
     $scope.items = [
-    { name: "I am Hungry" },
-    { name: "Damn I need laundry" },
-    { name: "Special Missions" },
+    { name: "Get some food", id:"food"},
+    { name: "Help out with some laundry", id: "laundry" },
+    { name: "Tutor someone", id: "tutor" },
+    { name: "Help buy some stuff",id:"buy" },
+    { name: "Special missions",id:"sm"}
     ];
-    $scope.func = function () {
-            console.log("Going to category")
-            $state.go('menu.tabs.category');
-    };
 })
 
 
@@ -120,7 +163,13 @@ angular.module('ionicApp', ['ionic'])
   $scope.submitForm = function() {
      console.log("Going to Give");
    $state.go('menu.tabs.give'); 
- };})
+  };
+})
+ .controller('favdetailsctrl', function ($scope, $stateParams) {
+   
+    $scope.id = $stateParams.favid;
+})
+
 
 
 
