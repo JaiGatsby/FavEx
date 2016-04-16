@@ -90,8 +90,12 @@ angular.module('ionicApp', ['ionic'])
 
 .controller('goToGet', function($scope, $state) {
   $scope.submitForm = function() {
-     console.log("Submitting Form");
+     console.log("Going to Get");
    $state.go('menu.tabs.get'); 
  };
-
 })
+.controller('goToGive', function($scope, $state) {
+  $scope.submitForm = function() {
+     console.log("Going to Give");
+   $state.go('menu.tabs.give'); 
+ };})
