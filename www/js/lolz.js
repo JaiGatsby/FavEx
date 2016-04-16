@@ -139,6 +139,24 @@ angular.module('ionicApp', ['ionic'])
     })
 
     $urlRouterProvider.otherwise("/menu/tabs/about");
+
+    .state('signin', {
+        url: "/signin",
+        templateUrl: "templates/signin.html",
+        controller: "AppCtrl"
+    })
+  
+      .state('menu.tabs.about.third', {
+          url: "/third",
+          views: {
+              'about-sub': {
+                  templateUrl: "templates/third.html"
+              }
+          }
+      })
+
+    $urlRouterProvider.otherwise("/signin");
+
 })
 
 .controller('itemCtrl', function ($scope, $state, $location) {
@@ -153,23 +171,27 @@ angular.module('ionicApp', ['ionic'])
 
 
 .controller('goToGet', function($scope, $state) {
-  $scope.submitForm = function() {
-     console.log("Going to Get");
-   $state.go('menu.tabs.get'); 
- };
+    $scope.submitForm = function() {
+        console.log("Going to Get");
+        $state.go('menu.tabs.get'); 
+    };
 
 })
+
+
+
 .controller('goToGive', function($scope, $state) {
-  $scope.submitForm = function() {
-     console.log("Going to Give");
-   $state.go('menu.tabs.give'); 
-  };
+    $scope.submitForm = function() {
+        console.log("Going to Give");
+        $state.go('menu.tabs.give'); 
+
+    };
 })
+
  .controller('favdetailsctrl', function ($scope, $stateParams) {
    
-    $scope.id = $stateParams.favid;
-})
-
+     $scope.id = $stateParams.favid;
+ })
 
 
 
