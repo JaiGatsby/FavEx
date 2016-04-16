@@ -1,3 +1,4 @@
+
 angular.module('ionicApp', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
@@ -25,11 +26,11 @@ angular.module('ionicApp', ['ionic'])
             }
         }
     })
-    .state('menu.tabs.search', {
-        url: "/search",
+   .state('menu.tabs.status', {
+        url: "/status",
         views: {
-            'search-tab': {
-                templateUrl: "templates/search.html"
+            'status-tab': {
+                templateUrl: "templates/status.html"
             }
         }
     })
@@ -43,47 +44,58 @@ angular.module('ionicApp', ['ionic'])
         }
     })
 
-    .state('menu.tabs.about.first', {
-        url: "/first",
-        views: {
-            'about-sub': {
-                templateUrl: "templates/first.html"
-            }
-        }
-    })
-    .state('menu.tabs.about.second', {
-        url: "/second",
-        views: {
-            'about-sub': {
-                templateUrl: "templates/second.html"
-            }
-        }
-    })
-    .state('menu.tabs.give', {
-        url: "/give",
-        views: {
-            'give-tab': {
-                templateUrl: "templates/give.html"
-            }
-        }
-    })
-  .state('menu.tabs.get', {
-      url: "/get",
-      views: {
-          'get-tab': {
-              templateUrl: "templates/get.html"
-          }
+
+  .state('menu.tabs.about.first', {
+    url: "/first",
+    views: {
+      'about-sub': {
+        templateUrl: "templates/first.html"
       }
+    }
+  })
+  .state('menu.tabs.about.second', {
+    url: "/second",
+    views: {
+      'about-sub': {
+        templateUrl: "templates/second.html"
+      }
+    }
   })
 
-    .state('menu.tabs.food', {
-        url: "/food",
-        views: {
-            'food-tab': {
-                templateUrl: "templates/food.html"
-            }
-        }
-    })
+  .state('menu.tabs.give', {
+    url: "/give",
+    views: {
+      'give-tab': {
+        templateUrl: "templates/give.html"
+      }
+    }
+  })
+.state('menu.tabs.get', {
+    url: "/get",
+    views: {
+      'get-tab': {
+        templateUrl: "templates/get.html"
+      }
+    }
+})
+   .state('menu.tabs.food', {
+       url: "/food",
+       views: {
+           'food-tab': {
+               templateUrl: "templates/food.html"
+           }
+       }
+   })
+         .state('favdetails', {
+             url: "/favdetails",
+             views: {
+                 'food-tab': {
+                     templateUrl: "templates/favdetails.html"
+                 }
+             },
+             controller: "favdetailsctrl"
+         })
+
 
     .state('menu.tabs.laundry', {
         url: "/laundry",
@@ -163,6 +175,22 @@ angular.module('ionicApp', ['ionic'])
     };
 })
 
+/*.controller('getCon', function($scope){
+	$scope.onfuckingslide = function() {
+    $( "#slider-range-min" ).slider({
+      range: "min",
+      value: 50,
+      min: 0,
+      max: 100,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.value + ",000");
+        $(".a, .b, .c, .d").width(ui.value + "%");
+      }
+    });
+    $(".ui-slider-handle").text("<>");
+    $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value") + ",000");
+  };
+})*/
 
 .controller('goToGet', function($scope, $state) {
     $scope.submitForm = function() {
@@ -175,6 +203,7 @@ angular.module('ionicApp', ['ionic'])
 
 
 .controller('goToGive', function($scope, $state) {
+
     $scope.submitForm = function() {
         console.log("Going to Give");
         $state.go('menu.tabs.give'); 
@@ -182,9 +211,26 @@ angular.module('ionicApp', ['ionic'])
     };
 })
 
+ .controller('favdetailsctrl', function ($scope, $stateParams, getshit) {
+	 
+     $scope.id = $stateParams.favid
+	 
+	 
+	 
+ })
+ // whoevers reading this shit, you are 
+.service('getshit', function(dbman){
+            this.retrieve_jobs = function(t) {
+				
+               return dbman.query('f', {type: t}, 'time');
+			   
+            }
+         })
 
 
-
-
-
-
+.controller('CalcCtrl', function ($scope, $state) {
+    $scope.data = {};
+	$scope.funky = function(){
+	console.log($scope.data.qty);
+	}
+})

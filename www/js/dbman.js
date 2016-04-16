@@ -95,7 +95,7 @@ angular.module('ionicApp').factory('dbman', function(){
 			return res;
 		
 	};
-	factory.query = function(table, obj, sel, limit = null, skrows = 0, order){
+	factory.query = function(table, obj, order, limit = null, skrows = 0){
 		/*
 		var query = factory.usrtable.insert({
 			mail: "saas@dsafd.com"
@@ -115,7 +115,7 @@ angular.module('ionicApp').factory('dbman', function(){
 		query.where({
 			   obj
 			})
-			   .select(sel)
+			  
 			   .orderBy(order)
 			   .skip(skrows).take(limit)
 			   .read().done(function (results) {
