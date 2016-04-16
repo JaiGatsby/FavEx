@@ -1,4 +1,4 @@
-<div class="sign-in card" style="background-color:#00CCCC;">
+<div id="sign-in">
     <h3 style="font-family:'Lobster';font-size:30px;" align="center">
 	Welcome to FavEx
     </h3>
@@ -14,6 +14,8 @@
 		</span>
     </label>
     
-	<button type="button" id="b" ng-click="check()" class="button button-block button-energized">{{((data.itsc == "")||(data.pword == "")) ? "Enter ITSC ID and Password" : "Go!"}} {{((data.itsc == "")||(data.pword == "")) | yesNo}}</button>
+
+    <a href="#menu/tabs/home" style="text-decoration:none"><button type="button" id="b" ng-click="check()" class="button button-block button-energized">{{((data.itsc == "")||(data.pword == "")) ? "Enter ITSC ID and Password" : "Go!"}} {{((data.itsc == "")||(data.pword == "")) | yesNo}}</button></a>
+
 	
 </div>

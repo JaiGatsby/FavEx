@@ -1,21 +1,26 @@
-<ion-view title="First" ng-app="ionicApp" ng-controller="AppCtrl">
-	<ion-content class="padding has-tabs-top">
-    <h3>
-	Welcome
-    </h3>
-	
-	<label class="item item-input">
-      <input ng-model="data.itsc" type="text" placeholder="ITSC ID" onchange="hello()">
-    </label>
-    
-	<label class="item item-input">
-      <input ng-model="data.pword" type="password" placeholder="Password">
-	  <span id="hid_disable" style="height:0px;width=0px;">
-	  
-		</span>
-    </label>
-    
-	<button type="button" id="b" ng-click="check()" class="button button-block button-positive">{{((data.itsc == "")||(data.pword == "")) ? "Enter ITSC ID and Password" : "Go!"}} {{((data.itsc == "")||(data.pword == "")) | yesNo}}</button>
-	
-	</ion-content>
-</ion-view>
+     <ion-view view-title="About">
+        <ion-content class="">
+          <div class = "">
+            <div class="item tabs tabs-secondary tabs-icon-top"><a class="tab-item" ui-sref="menu.tabs.about.first"> <em class="icon ion-star"></em> First </a> <a class="tab-item" ui-sref="menu.tabs.about.second"> <em class="icon ion-star"></em> second </a> <a class="tab-item" ui-sref="menu.tabs.about.third"> <em class="icon ion-star"></em> Third </a></div>
+          </div>
+          <div class = "card">
+                  <h3 class="padding">Inspiration</h3>
+              <p class="padding"> College students lead busy lives. It is almost inevitable that there be moments that they need a helping hand. And that is what we hope to help with. A community of people all helping each other in their times of need is what we envision. </p>
+          </div>
+          <div class = "card">
+                  <h3 class="padding">What It Does</h3>
+              <p class="padding"> FavEx is a platform wherein people who need favours can post requests and others who happen to be in the area or have the time can help out. Of course we don't expect to rely on just the gratitude of people, instead we implemented an incentive based system wherein one gains points by doing favours and spends those points while getting favours done. </p>
+          </div>
+          <div class = "card">
+                  <h3 class="padding">How We Built It</h3>
+              <p class="padding"> Ionic framework upon Cordova, with a Microsoft Azure database running MySQL </p>
+          </div>
+          <div class = "card">
+                  <h3 class="padding">Challenges We Ran Into</h3>
+              <p class="padding"> None of us knew AngularJS, or even regular JS, which is a base pre-requisite for Ionic. </p>
+          </div>
+
+        </ion-content>
+        <ui-view name = "about-sub"></ui-view>
+
+      </ion-view>
