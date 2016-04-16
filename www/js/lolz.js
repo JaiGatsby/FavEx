@@ -75,7 +75,12 @@ angular.module('ionicApp', ['ionic'])
       }
     }
   })
-
+.state('signin', {
+      url: "/signin",
+      templateUrl: "templates/signin.html",
+      controller: "AppCtrl"
+    })
+  
   .state('menu.tabs.about.third', {
     url: "/third",
     views: {
@@ -85,7 +90,7 @@ angular.module('ionicApp', ['ionic'])
     }
   })
 
-  $urlRouterProvider.otherwise("/menu/tabs/about");
+  $urlRouterProvider.otherwise("/signin");
 })
 
 .controller('itemCtrl', function ($scope) {
@@ -104,6 +109,7 @@ angular.module('ionicApp', ['ionic'])
  };
 
 })
+
 .controller('goToGive', function($scope, $state) {
   $scope.submitForm = function() {
      console.log("Going to Give");
