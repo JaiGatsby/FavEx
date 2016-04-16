@@ -214,11 +214,12 @@ angular.module('ionicApp', ['ionic'])
 
  .controller('favdetailsctrl', function ($scope, $stateParams, getshit) {
 	 
-     $scope.id = $stateParams.favid
+     $scope.id = $stateParams.favid;
 	 
 	 
 	 
  })
+
      .controller('foodctrl', function ($scope, $stateParams, dbman) {
 
       
