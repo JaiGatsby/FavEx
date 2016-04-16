@@ -67,6 +67,12 @@ angular.module('ionicApp', ['ionic'])
       }
     }
   })
+.state('menu.tabs.get', {
+    url: "/get",
+    views: {
+        templateUrl: "templates/get.html"
+      }
+  })
   .state('menu.tabs.about.third', {
     url: "/third",
     views: {
@@ -77,4 +83,12 @@ angular.module('ionicApp', ['ionic'])
   })
 
   $urlRouterProvider.otherwise("/menu/tabs/about");
+})
+
+.controller('goToGet', function($scope, $state) {
+  $scope.submitForm = function() {
+     console.log("Submitting Form", user);
+   $state.go('menu.tabs.get'); 
+ };
+
 })
