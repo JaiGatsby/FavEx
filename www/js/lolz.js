@@ -180,19 +180,11 @@ angular.module('ionicApp', ['ionic'])
 
  .controller('favdetailsctrl', function ($scope, $stateParams, getshit) {
 	 
-     $scope.id = $stateParams.favid
+     $scope.id = $stateParams.favid;
 	 
 	 
 	 
- }).
- // whoevers reading this shit, you are 
-service('getshit', function(dbman){
-            this.retrieve_jobs = function(t) {
-				
-               return dbman.query('f', {type: t}, 'time');
-			   
-            }
-         });
+ })
 
 
 

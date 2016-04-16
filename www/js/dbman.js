@@ -1,7 +1,7 @@
 var MobileServiceClient = WindowsAzure.MobileServiceClient;
 var client = new MobileServiceClient('https://favex.azure-mobile.net/', 'CCGQQFPPjSGpBHuykZMnvmhNELtuvv15');
 
-angular.module('ionicApp').factory('dbman', function(){
+angular.module('ionicApp').service('dbman', function(){
 	var factory = {};
 		factory.usrtable = client.getTable('favor');
 	factory.favortable = client.getTable('user');
