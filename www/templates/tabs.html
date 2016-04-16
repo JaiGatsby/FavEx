@@ -6,22 +6,37 @@ navigation history that also transitions its views in and out.
 <ion-view view-title="Welcome">
         <ion-tabs class="tabs-icon-top tabs-positive">
 
-          <ion-tab title="Search" icon="ion-search" ui-sref="menu.tabs.search">
-            <ion-nav-view name="search-tab"></ion-nav-view>
+          <ion-tab title="Status" icon="ion-search" ui-sref="menu.tabs.status" hidden ="true">
+            <ion-nav-view name="status-tab"></ion-nav-view>
           </ion-tab>
 
-          <ion-tab title="About" icon="ion-information-circled" ui-sref="menu.tabs.about.first">
+          <ion-tab title="About" icon="ion-information-circled" ui-sref="menu.tabs.about.first" hidden = "true">
             <ion-nav-view name="about-tab"></ion-nav-view>
           </ion-tab> 
           <ion-tab title="Home" icon="ion-information-circled" ui-sref="menu.tabs.home" hidden = "true">
           
             <ion-nav-view name="home-tab"></ion-nav-view>
           </ion-tab> 
-            <ion-tab title="Give" icon="ion-information-circled" ui-sref="menu.tabs.give" hidden = "true">
+            <ion-tab title="Give" icon="ion-hammer" ui-sref="menu.tabs.give">
                 <ion-nav-view name="give-tab"></ion-nav-view>
             </ion-tab>
-            <ion-tab title="Get" icon="ion-information-circled" ui-sref="menu.tabs.get" hidden = "true">
+            <ion-tab title="Get" icon="ion-heart" ui-sref="menu.tabs.get">
                 <ion-nav-view name="get-tab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Food" icon="ion-information-circled" ui-sref="menu.tabs.food" hidden="true">
+                <ion-nav-view name="food-tab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Laundry" icon="ion-information-circled" ui-sref="menu.tabs.laundry" hidden="true">
+                <ion-nav-view name="laundry-tab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Tutor" icon="ion-information-circled" ui-sref="menu.tabs.tutor" hidden="true">
+                <ion-nav-view name="tutor-tab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Buy" icon="ion-information-circled" ui-sref="menu.tabs.buy" hidden="true">
+                <ion-nav-view name="buy-tab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="SM" icon="ion-information-circled" ui-sref="menu.tabs.sm" hidden="true">
+                <ion-nav-view name="sm-tab"></ion-nav-view>
             </ion-tab>
         </ion-tabs>
       </ion-view>

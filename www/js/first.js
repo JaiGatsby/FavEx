@@ -10,7 +10,10 @@ angular.module('ionicApp')
   $scope.test = $scope.itsc;
   $scope.check = function(){
 	  
-	  alert("Checking database...");
+	  alert("Checking database");
+      $state.go('menu.tabs.home');
+      
+      
 	  /*if(valid){
 		if(!userexists){
 			
@@ -20,7 +23,7 @@ angular.module('ionicApp')
 	  else{
 		  
 	  }*/
-  }
+  };
   
 })
 .filter('yesNo', function() {
