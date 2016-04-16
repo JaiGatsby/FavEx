@@ -1,6 +1,6 @@
 angular.module('ionicApp')
 
-.controller('AppCtrl2', function($scope)
+.controller('AppCtrl', function($scope)
 {
   $scope.data = {
 	  itsc: "",

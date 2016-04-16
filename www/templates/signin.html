@@ -4,18 +4,17 @@
     </h3>
 	
 	<label class="item item-input">
-      <input ng-model="data.itsc" type="text" placeholder="ITSC ID" onchange="hello()">
+      <input ng-model="data.itsc" type="text" placeholder="ITSC ID" onchange="hello()" />
     </label>
     
 	<label class="item item-input">
-      <input ng-model="data.pword" type="password" placeholder="Password">
+      <input ng-model="data.pword" type="password" placeholder="Password" />
 	  <span id="hid_disable" style="height:0px;width=0px;">
 	  
 		</span>
     </label>
     
-
-    <a href="#menu/tabs/home" style="text-decoration:none"><button type="button" id="b" ng-click="check()" class="button button-block button-energized">{{((data.itsc == "")||(data.pword == "")) ? "Enter ITSC ID and Password" : "Go!"}} {{((data.itsc == "")||(data.pword == "")) | yesNo}}</button></a>
+    <button type="button" id="b" ng-click="check()" class="button button-block button-energized"></button>
 
 	
 </div>
