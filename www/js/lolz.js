@@ -78,3 +78,11 @@ angular.module('ionicApp', ['ionic'])
 
   $urlRouterProvider.otherwise("/menu/tabs/about");
 })
+// JavaScript source code
+.controller('itemCtrl', function ($scope) {
+    $scope.items = [
+    { name: "I am Hungry" },
+    { name: "Damn I need laundry" },
+    { name: "Special Missions" },
+    ];
+});
