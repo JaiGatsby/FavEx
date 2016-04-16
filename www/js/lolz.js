@@ -25,14 +25,14 @@ angular.module('ionicApp', ['ionic'])
             }
         }
     })
-   /* .state('menu.tabs.search', {
-        url: "/search",
+   .state('menu.tabs.status', {
+        url: "/status",
         views: {
-            'search-tab': {
-                templateUrl: "templates/search.html"
+            'status-tab': {
+                templateUrl: "templates/status.html"
             }
         }
-    })*/
+    })
 
     .state('menu.tabs.about', {
         url: "/about",
