@@ -59,6 +59,14 @@ angular.module('ionicApp', ['ionic'])
       }
     }
   })
+  .state('menu.tabs.give', {
+    url: "/give",
+    views: {
+      'give-tab': {
+        templateUrl: "templates/give.html"
+      }
+    }
+  })
   .state('menu.tabs.about.third', {
     url: "/third",
     views: {
@@ -70,6 +78,3 @@ angular.module('ionicApp', ['ionic'])
 
   $urlRouterProvider.otherwise("/menu/tabs/about");
 })
-
-
-
