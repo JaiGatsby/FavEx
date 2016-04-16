@@ -1,6 +1,19 @@
+<link rel="stylesheet" type="text/css" href="css/radio.css" />
+
+<!--script src="js/slider.js"></script-->	
 <ion-view title="Get" >
     <ion-content class="padding has-tabs-top">
-        <h2>Git Good</h2>
+	<br><br>
+	
+<div ng-controller="CalcCtrl">
+    <form>
+              
+        
+        <input type="range" min="0" max="100" ng-model="data.qty" ng-click="funky()">
+       <p>{{data.qty}}</p>
+        
+    </form>    
+</div>
     </ion-content>
 </ion-view>
 

@@ -1,3 +1,4 @@
+
 angular.module('ionicApp', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
@@ -72,7 +73,8 @@ angular.module('ionicApp', ['ionic'])
     views: {
       'get-tab': {
         templateUrl: "templates/get.html"
-      }
+      },
+	controller: 'getCon'
     }
   })
 
@@ -96,7 +98,22 @@ angular.module('ionicApp', ['ionic'])
     ];
 })
 
-
+/*.controller('getCon', function($scope){
+	$scope.onfuckingslide = function() {
+    $( "#slider-range-min" ).slider({
+      range: "min",
+      value: 50,
+      min: 0,
+      max: 100,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.value + ",000");
+        $(".a, .b, .c, .d").width(ui.value + "%");
+      }
+    });
+    $(".ui-slider-handle").text("<>");
+    $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value") + ",000");
+  };
+})*/
 .controller('goToGet', function($scope, $state) {
   $scope.submitForm = function() {
      console.log("Going to Get");
@@ -111,4 +128,9 @@ angular.module('ionicApp', ['ionic'])
  };})
 
 
-
+.controller('CalcCtrl', function ($scope, $state) {
+    $scope.data = {};
+	$scope.funky = function(){
+	console.log($scope.data.qty);
+	}
+})
