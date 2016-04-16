@@ -129,17 +129,6 @@ angular.module('ionicApp', ['ionic'])
         }
     })
 
-    .state('menu.tabs.about.third', {
-        url: "/third",
-        views: {
-            'about-sub': {
-                templateUrl: "templates/third.html"
-            }
-        }
-    })
-
-    $urlRouterProvider.otherwise("/menu/tabs/about");
-
     .state('signin', {
         url: "/signin",
         templateUrl: "templates/signin.html",
