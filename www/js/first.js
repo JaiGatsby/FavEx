@@ -19,8 +19,7 @@ angular.module('ionicApp')
   $scope.test = $scope.itsc;
   $scope.check = function(){
 	  
-	  alert("Checking database");
-      $state.go('menu.tabs.home');
+      window.open("#/menu/tabs/submit","_self");
       
       
 	  /*if(valid){

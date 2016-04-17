@@ -3,7 +3,7 @@
 <!--script src="js/slider.js"></script-->	
 <ion-view title="Get" ng-controller='AppCtrl2' class="whut">
     <ion-content class="padding has-tabs-top">
-	<h3 class="red titles">Please fill in the details of the required favour</h3>
+	<h3 class="oo titles">Please fill in the details of the required favour</h3>
 <div class="center-on-page">
   
   <input type="radio" name="rb" id="rb1" value="food" ng-model="rb" />
@@ -36,7 +36,7 @@
 	<div id="bc" class="{{dis}}" ng-controller="CalcCtrl" align="center" style="padding-top:10px;">
         
 	<input type="range" min="0" max="500" ng-model="data.qty" ng-click="funky()">
-	<h4>Budget Selection</h4> <p>Below ${{data.qty}}</p>
+	<span class="ww"><h4 class="ww">Budget Selection</h4> <p>Below ${{data.qty}}</p></span>
         
 		</div>
 	<urmom class="item item-input">
@@ -48,7 +48,7 @@
 		
     </urmom>
 	
-	<button type="button" id="b" ng-click="check()" class="button button-block button-energized">Submit</button>
+	<button type="button" id="b" ng-click="check()" class="button button-block" id="lol">Submit</button>
 
     </ion-content>
 </ion-view>

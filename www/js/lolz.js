@@ -140,6 +140,15 @@ angular.module('ionicApp', ['ionic'])
         templateUrl: "templates/signin.html",
         controller: "AppCtrl"
     })
+    .state('menu.tabs.submit', {
+        url: "/submit",
+        views: {
+            'submit-tab': {
+                templateUrl: "templates/submit.html"
+            }
+        }
+    })
+    
   
       .state('menu.tabs.about.third', {
           url: "/third",
@@ -221,29 +230,24 @@ angular.module('ionicApp', ['ionic'])
 	console.log($scope.data.qty);
 	}
 })
+
 .controller('AppCtrl', function($scope)
 {
   $scope.data = {
 	  itsc: "",
 	  pword: ""
   };
+    
   $scope.btxt = "Go!";
   $scope.test = $scope.itsc;
   $scope.check = function(){
 	  
-	  alert("Checking database");
-      $state.go('menu.tabs.home');
-      
-      
-	  /*if(valid){
-		if(!userexists){
-			
-		}
-		login		
-	  }
-	  else{
-		  
-	  }*/
+      if ($scope.data.itsc ==="admin" && $scope.data.pword === "fakedata"){
+          window.open("#/menu/tabs/home","_self");
+      }
+      else{
+          alert("Sorry, incorrect username and/or password")
+      }
   };
   
 })
@@ -251,8 +255,10 @@ angular.module('ionicApp', ['ionic'])
     return function(input) {
         if(input == true){
 			document.getElementById("b").setAttribute("disabled", "");
+            
 		}else{
 			document.getElementById("b").removeAttribute("disabled");
+            
 		}
 		return "";
     }
