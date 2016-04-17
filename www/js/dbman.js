@@ -1,14 +1,12 @@
-var MobileServiceClient = WindowsAzure.MobileServiceClient;
-var client = new MobileServiceClient('https://favex.azure-mobile.net/', 'CCGQQFPPjSGpBHuykZMnvmhNELtuvv15');
 
-angular.module('ionicApp').service('dbman', function(){
-	var factory = {};
-		factory.usrtable = client.getTable('favor');
-	factory.favortable = client.getTable('user');
+angular.module('ionicApp').service('dbman', function () {
+	
+		this.usrtable = client.getTable('favor');
+	this.favortable = client.getTable('user');
 
-	factory.insert = function(table, obj){
+	this.insert = function(table, obj){
 		/*
-		var query = factory.usrtable.insert({
+		var query = this.usrtable.insert({
 			mail: "saas@dsafd.com"
 		}).done(function (result) {
 		   alert(JSON.stringify(result));
@@ -17,10 +15,10 @@ angular.module('ionicApp').service('dbman', function(){
 		});
 		*/
 		var query;
-		if(table == "u"){
-			query = factory.usrtable;
-		}else if(table == "f"){
-			query = factory.favortable;
+		if(table === "u"){
+			query = this.usrtable;
+		}else if(table === "f"){
+			query = this.favortable;
 		}
 		var res;
 		query.insert(
@@ -37,9 +35,9 @@ angular.module('ionicApp').service('dbman', function(){
 		return res;
 		
 	};
-	factory.update = function(table, obj){
+	this.update = function(table, obj){
 		/*
-		var query = factory.usrtable.insert({
+		var query = this.usrtable.insert({
 			mail: "saas@dsafd.com"
 		}).done(function (result) {
 		   alert(JSON.stringify(result));
@@ -48,10 +46,10 @@ angular.module('ionicApp').service('dbman', function(){
 		});
 		*/
 		var query;
-		if(table == "u"){
-			query = factory.usrtable;
-		}else if(table == "f"){
-			query = factory.favortable;
+		if(table === "u"){
+			query = this.usrtable;
+		}else if(table === "f"){
+			query = this.favortable;
 		}
 		var res;
 		query.update({
@@ -67,9 +65,9 @@ angular.module('ionicApp').service('dbman', function(){
 			return res;
 		
 	};
-	factory.del = function(table, obj){
+	this.del = function(table, obj){
 		/*
-		var query = factory.usrtable.insert({
+		var query = this.usrtable.insert({
 			mail: "saas@dsafd.com"
 		}).done(function (result) {
 		   alert(JSON.stringify(result));
@@ -78,10 +76,10 @@ angular.module('ionicApp').service('dbman', function(){
 		});
 		*/
 		var query;
-		if(table == "u"){
-			query = factory.usrtable;
-		}else if(table == "f"){
-			query = factory.favortable;
+		if(table === "u"){
+			query = this.usrtable;
+		}else{
+			query = this.favortable;
 		}
 		var res;
 		query.del({
@@ -97,30 +95,22 @@ angular.module('ionicApp').service('dbman', function(){
 			return res;
 		
 	};
-	factory.query = function(table, obj, sel){
-		/*
-		var query = $scope.usrtable.insert({
-			mail: "saas@dsafd.com"
-		}).done(function (result) {
-		   alert(JSON.stringify(result));
-		}, function (err) {
-		   alert("Error: " + err);
-		});
-		*/
+	this.query = function(table, obj, sel){
+		
 		var query;
-		if(table == "u"){
-			query = $scope.usrtable;
+		if(table === "u"){
+			query = this.usrtable;
 		}else{
-			query = $scope.favortable;
+			query = this.favortable;
 		}
 		var res;
-		query.where({	
-			type:'f'
-			}).read().done(function (results) {
-				res = JSON.stringify(results));
-				}, function (err) {
-		alert("Error: " + err);
-			});
+		query.where().read().done(function (results) {
+		    res = JSON.stringify(result);
+		    alert(res);
+		}, function (err) {
+		    alert("Error: " + err);
+		});
+		console.log("dsdsadsa" + res);
 			return res;
 		
 	};

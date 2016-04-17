@@ -1,5 +1,5 @@
 
-angular.module('ionicApp', ['ionic'])
+angular.module('ionicApp')
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
@@ -82,20 +82,14 @@ angular.module('ionicApp', ['ionic'])
        url: "/food",
        views: {
            'food-tab': {
+               controller: "foodctrl",
                templateUrl: "templates/food.html"
+               
            }
-       },
-      controller: 'foodctrl'
+       }
+      
    })
-         .state('favdetails', {
-             url: "/favdetails",
-             views: {
-                 'food-tab': {
-                     templateUrl: "templates/favdetails.html"
-                 }
-             },
-             controller: "favdetailsctrl"
-         })
+         
 
 
     .state('menu.tabs.laundry', {
@@ -212,19 +206,12 @@ angular.module('ionicApp', ['ionic'])
     };
 })
 
- .controller('favdetailsctrl', function ($scope, $stateParams, getshit) {
-	 
-     $scope.id = $stateParams.favid;
-	 
-	 
-	 
- })
 
-     .controller('foodctrl', function ($scope, $stateParams, dbman) {
+     .controller('foodctrl', function ($scope, dbman) {
 
       
-         $scope.data = function () { alert(JSON.stringify(dbman.query('f', { type: 'f' }, '', 100000, 0))); };
-         
+         $scope.data = dbman.query('f', {}, ''); 
+         //$scope.data = [1,2,3,4,5,6];
          $scope.doRefresh = function () {
              alert("Refreshing");
              $scope.$broadcast('scroll.refreshComplete');
@@ -236,7 +223,25 @@ angular.module('ionicApp', ['ionic'])
 
 .controller('CalcCtrl', function ($scope, $state) {
     $scope.data = {};
-	$scope.funky = function(){
-	console.log($scope.data.qty);
-	}
+    $scope.funky = function(){
+        console.log($scope.data.qty);
+    }
 })
+
+.factory("Items", function ($firebaseArray) {
+    var itemsRef = new Firebase("https://incandescent-inferno-5317.firebaseio.com/items");
+    return $firebaseArray(itemsRef);
+
+
+})
+.controller("ListCtrl", function ($scope, Items) {
+    $scope.items = Items;
+    $scope.addItem = function () {
+        var name = prompt("What do you need to buy?");
+        if (name) {
+            $scope.items.$add({
+                "name": name
+            });
+        }
+    };
+});

@@ -1,18 +1,32 @@
-
+﻿
   <html ng-app="ionicApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
     <title>ionic Nested Tabs with Side Menus</title>
-	
+ 
     <link href="http://code.ionicframework.com/nightly/css/ionic.min.css" rel="stylesheet">
       <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/style.css">
 	  <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.7.min.js"></script>
     <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.min.js"></script>
-    <script src="js/lolz.js"></script>
+     
+       <script>
+          var MobileServiceClient = WindowsAzure.MobileServiceClient;
+          var client = new MobileServiceClient('https://favex.azure-mobile.net/', 'CCGQQFPPjSGpBHuykZMnvmhNELtuvv15');
+
+         angular.module('ionicApp', ["ionic", "firebase"]);
+      </script>
+      <script src="js/dbman.js"></script>
+      <!-- Firebase -->
+      <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+      <!-- AngularFire -->
+      <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+      <script src="js/lolz.js"></script>
+
+    
 	<script src="js/first.js"></script> 
 
   </head>
