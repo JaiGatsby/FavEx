@@ -170,22 +170,6 @@ angular.module('ionicApp')
     };
 })
 
-/*.controller('getCon', function($scope){
-	$scope.onfuckingslide = function() {
-    $( "#slider-range-min" ).slider({
-      range: "min",
-      value: 50,
-      min: 0,
-      max: 100,
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.value + ",000");
-        $(".a, .b, .c, .d").width(ui.value + "%");
-      }
-    });
-    $(".ui-slider-handle").text("<>");
-    $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value") + ",000");
-  };
-})*/
 
 .controller('goToGet', function($scope, $state) {
     $scope.submitForm = function() {
@@ -207,19 +191,17 @@ angular.module('ionicApp')
 })
 
 
-     .controller('foodctrl', function ($scope, dbman) {
+
+.controller('foodctrl', function ($scope, $stateParams, dbman) {
 
       
-         $scope.data = dbman.query('f', {}, ''); 
-         //$scope.data = [1,2,3,4,5,6];
-         $scope.doRefresh = function () {
+    $scope.data = function () { alert(JSON.stringify(dbman.query('f', { type: 'f' }, '', 100000, 0))); };
+         
+    $scope.doRefresh = function () {
              alert("Refreshing");
              $scope.$broadcast('scroll.refreshComplete');
-         };
-        
-
-
-     })
+     };
+})
 
 .controller('CalcCtrl', function ($scope, $state) {
     $scope.data = {};
@@ -234,14 +216,41 @@ angular.module('ionicApp')
 
 
 })
-.controller("ListCtrl", function ($scope, Items) {
-    $scope.items = Items;
-    $scope.addItem = function () {
-        var name = prompt("What do you need to buy?");
-        if (name) {
-            $scope.items.$add({
-                "name": name
-            });
-        }
-    };
+
+.controller('AppCtrl', function($scope)
+{
+  $scope.data = {
+	  itsc: "",
+	  pword: ""
+  };
+  $scope.btxt = "Go!";
+  $scope.test = $scope.itsc;
+  $scope.check = function(){
+	  
+	  alert("Checking database");
+      $state.go('menu.tabs.home');
+      
+      
+	  /*if(valid){
+		if(!userexists){
+			
+		}
+		login		
+	  }
+	  else{
+		  
+	  }*/
+  };
+  
+})
+.filter('yesNo', function() {
+    return function(input) {
+        if(input == true){
+			document.getElementById("b").setAttribute("disabled", "");
+		}else{
+			document.getElementById("b").removeAttribute("disabled");
+		}
+		return "";
+    }
+
 });

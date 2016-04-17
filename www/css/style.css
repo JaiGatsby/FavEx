@@ -4,8 +4,11 @@
 
 #homey{
     padding-top: 100px;
-    color:white;
-    
+    color:white;  
+}
+#homer{
+    padding-top: 100px;
+    color:white;  
 }
 .titles{
     font-family: 'Lobster';
@@ -38,4 +41,7 @@
 }
 p{
     font-family: 'Cabin';
+}
+.center{
+    padding-top: 130px;
 }
