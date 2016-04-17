@@ -1,9 +1,9 @@
 <link rel="stylesheet" type="text/css" href="css/radio.css" />
 
 <!--script src="js/slider.js"></script-->	
-<ion-view title="Get" ng-controller='AppCtrl2'>
+<ion-view title="Get" ng-controller='AppCtrl2' class="whut">
     <ion-content class="padding has-tabs-top">
-	
+	<h3 class="red titles">Please fill in the details of the required favour</h3>
 <div class="center-on-page">
   
   <input type="radio" name="rb" id="rb1" value="food" ng-model="rb" />
@@ -15,9 +15,12 @@
   <input type="radio" name="rb" id="rb4" value="tutoring" ng-model="rb"/>
 
   <label for="rb4">Tutoring</label>
+    <input type="radio" name="rb" id="rb5" value="special" ng-model="rb"/>
+
+  <label for="rb5">Special Missions</label>
   
 </div>
-<urmom class="item item-input fuckingboxes">
+<urmom class="item item-input">
       <input ng-model="data.dp" type="text" placeholder="Pick-Up Point" onchange="hello()">
     </urmom>
     
@@ -26,7 +29,10 @@
 	  <span id="hid_disable" style="height:0px;width=0px;">
 	  
 		</span>
-    </urmom>	
+    </urmom>
+        <urmom class="item item-input">
+      <input ng-model="data.dp" type="text" placeholder="Phone Number" onchange="hello()">
+    </urmom>
 	<div id="bc" class="{{dis}}" ng-controller="CalcCtrl" align="center" style="padding-top:10px;">
         
 	<input type="range" min="0" max="500" ng-model="data.qty" ng-click="funky()">
@@ -42,7 +48,7 @@
 		
     </urmom>
 	
-	<button type="button" id="b" ng-click="check()" class="button button-block button-energized">{{((data.itsc == "")||(data.pword == "")) ? "test" : "Go!"}} {{((data.itsc == "")||(data.pword == "")) | yesNo}}</button>
+	<button type="button" id="b" ng-click="check()" class="button button-block button-energized">Submit</button>
 
     </ion-content>
 </ion-view>

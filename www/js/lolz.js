@@ -176,22 +176,6 @@ angular.module('ionicApp', ['ionic'])
     };
 })
 
-/*.controller('getCon', function($scope){
-	$scope.onfuckingslide = function() {
-    $( "#slider-range-min" ).slider({
-      range: "min",
-      value: 50,
-      min: 0,
-      max: 100,
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.value + ",000");
-        $(".a, .b, .c, .d").width(ui.value + "%");
-      }
-    });
-    $(".ui-slider-handle").text("<>");
-    $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value") + ",000");
-  };
-})*/
 
 .controller('goToGet', function($scope, $state) {
     $scope.submitForm = function() {
@@ -220,19 +204,16 @@ angular.module('ionicApp', ['ionic'])
 	 
  })
 
-     .controller('foodctrl', function ($scope, $stateParams, dbman) {
+.controller('foodctrl', function ($scope, $stateParams, dbman) {
 
       
-         $scope.data = function () { alert(JSON.stringify(dbman.query('f', { type: 'f' }, '', 100000, 0))); };
+    $scope.data = function () { alert(JSON.stringify(dbman.query('f', { type: 'f' }, '', 100000, 0))); };
          
-         $scope.doRefresh = function () {
+    $scope.doRefresh = function () {
              alert("Refreshing");
              $scope.$broadcast('scroll.refreshComplete');
-         };
-        
-
-
-     })
+     };
+})
 
 .controller('CalcCtrl', function ($scope, $state) {
     $scope.data = {};
