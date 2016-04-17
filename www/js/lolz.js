@@ -1,5 +1,5 @@
 
-angular.module('ionicApp', ['ionic'])
+angular.module('ionicApp')
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
@@ -82,20 +82,14 @@ angular.module('ionicApp', ['ionic'])
        url: "/food",
        views: {
            'food-tab': {
+               controller: "foodctrl",
                templateUrl: "templates/food.html"
+               
            }
-       },
-      controller: 'foodctrl'
+       }
+      
    })
-         .state('favdetails', {
-             url: "/favdetails",
-             views: {
-                 'food-tab': {
-                     templateUrl: "templates/favdetails.html"
-                 }
-             },
-             controller: "favdetailsctrl"
-         })
+         
 
 
     .state('menu.tabs.laundry', {
@@ -205,13 +199,7 @@ angular.module('ionicApp', ['ionic'])
     };
 })
 
- .controller('favdetailsctrl', function ($scope, $stateParams, getshit) {
-	 
-     $scope.id = $stateParams.favid;
-	 
-	 
-	 
- })
+
 
 .controller('foodctrl', function ($scope, $stateParams, dbman) {
 
@@ -226,9 +214,16 @@ angular.module('ionicApp', ['ionic'])
 
 .controller('CalcCtrl', function ($scope, $state) {
     $scope.data = {};
-	$scope.funky = function(){
-	console.log($scope.data.qty);
-	}
+    $scope.funky = function(){
+        console.log($scope.data.qty);
+    }
+})
+
+.factory("Items", function ($firebaseArray) {
+    var itemsRef = new Firebase("https://incandescent-inferno-5317.firebaseio.com/items");
+    return $firebaseArray(itemsRef);
+
+
 })
 
 .controller('AppCtrl', function($scope)
@@ -262,4 +257,5 @@ angular.module('ionicApp', ['ionic'])
 		}
 		return "";
     }
+
 });
