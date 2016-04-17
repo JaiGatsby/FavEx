@@ -267,6 +267,172 @@ angular.module('ionicApp')
   };
 })
 
+.controller('lCtrl1', function($scope)
+{
+  $scope.groups = [];
+  $scope.cats = ["Pick-up", "Drop-off", "Budget", "Phone number", "Comments"];
+  for (var i=0; i<2; i++) {
+    $scope.groups[i] = {
+      name: i,
+      items: []
+    };
+    if(i==0){
+        $scope.groups[i].items.push('Pick-Up Hall 4');
+      $scope.groups[i].items.push('Drop-Off LG7');
+      $scope.groups[i].items.push('Budget = $25');
+      $scope.groups[i].items.push('No: 94683375');
+      $scope.groups[i].items.push('---');
+    }
+    else{
+      $scope.groups[i].items.push('Pick-Up AT LG5');
+      $scope.groups[i].items.push('Drop-Off south gate');
+      $scope.groups[i].items.push('Budget = $200');
+      $scope.groups[i].items.push('No: 53267666');
+      $scope.groups[i].items.push('Thanks :)');
+    }
+  }
+  
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+})
+
+.controller('lCtrl2', function($scope)
+{
+  $scope.groups = [];
+  $scope.cats = ["Pick-up", "Drop-off", "Budget", "Phone number", "Comments"];
+  for (var i=0; i<2; i++) {
+    $scope.groups[i] = {
+      name: i,
+      items: []
+    };
+    if(i==0){
+        $scope.groups[i].items.push('Pick-Up at rm 506 Hall 8');
+      $scope.groups[i].items.push('Drop-Off Hall 4 rm 301');
+      $scope.groups[i].items.push('Budget = $75');
+      $scope.groups[i].items.push('No: 946833567');
+      $scope.groups[i].items.push('Please Hurry!');
+    }
+    else{
+      $scope.groups[i].items.push('Pick-Up Hall 3');
+      $scope.groups[i].items.push('Drop-Off north gate');
+      $scope.groups[i].items.push('Budget = $100');
+      $scope.groups[i].items.push('No: 632653678');
+      $scope.groups[i].items.push('Take your time :)');
+    }
+  }
+  
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+})
+
+.controller('lCtrl3', function($scope)
+{
+  $scope.groups = [];
+  $scope.cats = ["Pick-up", "Drop-off", "Budget", "Phone number", "Comments"];
+  for (var i=0; i<2; i++) {
+    $scope.groups[i] = {
+      name: i,
+      items: []
+    };
+    if(i==0){
+        $scope.groups[i].items.push('Pick-Up Hall 1');
+      $scope.groups[i].items.push('Drop-Off atrium');
+      $scope.groups[i].items.push('Budget = $70');
+      $scope.groups[i].items.push('No: 946886672');
+      $scope.groups[i].items.push('Meet at lg4 gym');
+    }
+    else{
+      $scope.groups[i].items.push('Pick-Up Hall 7');
+      $scope.groups[i].items.push('Drop-Off north gate');
+      $scope.groups[i].items.push('Budget = $200');
+      $scope.groups[i].items.push('No: 26265366');
+      $scope.groups[i].items.push('N/A');
+    }
+  }
+  
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+})
+
+.controller('lCtrl4', function($scope)
+{
+  $scope.groups = [];
+  $scope.cats = ["Pick-up", "Drop-off", "Budget", "Phone number", "Comments"];
+  for (var i=0; i<2; i++) {
+    $scope.groups[i] = {
+      name: i,
+      items: []
+    };
+    if(i==0){
+        $scope.groups[i].items.push('Pick-Up Hall 1');
+      $scope.groups[i].items.push('Drop-Off Hall 2');
+      $scope.groups[i].items.push('Budget = $40');
+      $scope.groups[i].items.push('No: 94683372');
+      $scope.groups[i].items.push('Meet at cafe');
+    }
+    else{
+      $scope.groups[i].items.push('Pick-Up Hall 3');
+      $scope.groups[i].items.push('Drop-Off south gate');
+      $scope.groups[i].items.push('Budget = $100');
+      $scope.groups[i].items.push('No: 63265366');
+      $scope.groups[i].items.push('See you soon');
+    }
+  }
+  
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+})
+
+
+
 .controller('AppCtrl', function($scope)
 {
   $scope.data = {
